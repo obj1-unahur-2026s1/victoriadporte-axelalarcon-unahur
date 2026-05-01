@@ -1,0 +1,24 @@
+import victoria.*
+import deportes.*
+
+describe "Tests del entrenamiento de Victoria" {
+
+  test "Victoria entrena para parecerse a Pareto y el presupuesto es de 15980" {
+    victoria.cambiarDeporte(judo)
+    victoria.cambiarAltura(150)
+    victoria.cambiarEntrenadores(4)
+
+    // 15980 = 160 * 3 + 50 * 150 + 2000 * 4
+    assert.equals(15980, victoria.presupuesto())
+  }
+
+  test "Victoria entrena para parecerse a Delpo y el presupuesto es de 6215" {
+    victoria.cambiarDeporte(tenis)
+    victoria.cambiarAltura(210)
+    victoria.cambiarEntrenadores(2)
+
+    // 6215 = 200 + 3 * 5 + 100 * 20 + 2 * 2000
+    assert.equals(6215, victoria.presupuesto())
+  }
+
+}
